@@ -1,8 +1,9 @@
-FROM debian:stretch
+ARG image=ubuntu:bionic
+FROM $image
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq update && apt-get -qqy upgrade \
- && apt-get install -qqy firebird3.0-server libicu57 \
+ && apt-get install -qqy firebird3.0-server \
  && gsec -modify sysdba -pw masterke \
  && echo "UserManager = Legacy_UserManager" > /etc/firebird/3.0/firebird.conf \
  && echo "WireCrypt = Enabled" >> /etc/firebird/3.0/firebird.conf \
