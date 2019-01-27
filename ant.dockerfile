@@ -7,8 +7,8 @@ RUN (cd /opt \
         https://www.apache.org/dist/ant/KEYS \
         https://www.apache.org/dist/ant/binaries/apache-ant-1.10.5-bin.zip.asc \
         http://apache-mirror.rbc.ru/pub/apache//ant/binaries/apache-ant-1.10.5-bin.zip \
-    && gpg --import KEYS \
-    && gpg --verify apache-ant-1.10.5-bin.zip.asc \
+    && gpg --batch --import KEYS \
+    && gpg --no-tty --verify apache-ant-1.10.5-bin.zip.asc \
     && unzip -q apache-ant-1.10.5-bin.zip \
     && rm KEYS apache-ant-1.10.5-bin.zip.asc apache-ant-1.10.5-bin.zip \
 )
