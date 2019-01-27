@@ -2,6 +2,7 @@
 ARG image_source=ubuntu:bionic
 FROM $image_source
 
+LABEL maintainer "Vyacheslav Napadovsky" <napadovskiy@gmail.com>
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 
 # optional packages: libencode-locale-perl libinline-perl

@@ -1,5 +1,7 @@
 FROM openjdk
 
+LABEL maintainer "Vyacheslav Napadovsky" <napadovskiy@gmail.com>
+
 RUN (cd /opt \
     && wget --progress=dot -e dotbytes=1M \
         https://www.apache.org/dist/ant/KEYS \

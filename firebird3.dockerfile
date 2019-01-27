@@ -7,6 +7,8 @@
 
 ARG image=debian:buster
 FROM $image as result
+
+LABEL maintainer "Vyacheslav Napadovsky" <napadovskiy@gmail.com>
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8 DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get -qq update && apt-get -qqy upgrade \
